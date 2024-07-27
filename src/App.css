@@ -1,38 +1,352 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container {
+  margin-left:0;
+  margin-right: 0;
+  background-color: red;
+  width:100%;
   display: flex;
+  position: absolute;
+  padding: 0;
+  max-width: 100%;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: darkkhaki;
+}
+
+.heading {
+  margin-right: 20px;
+}
+
+.heading h1, .heading p {
+  margin: 0;
+  padding-bottom: 10px;
+}
+
+.image {
+  margin-left: 20px;
+}
+.cards-main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; /* Distribute space evenly between cards */
+  gap: 20px; /* Add gap between cards */
+  margin-top: 30px;
+}
+
+.card {
+  width: calc(25% - 20px); /* Set width of each card to occupy 25% of the container minus the gap */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex; /* Make card contents flex container */
+  flex-direction: column; /* Stack card contents vertically */
+}
+
+.card img {
+  width: 100px;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: auto;
+}
+
+.card-body {
+  flex-grow: 1; /* Allow card body to grow to fill remaining space */
+  padding: 20px;
+  display: flex; /* Make card body flex container */
+  flex-direction: column; /* Stack card body contents vertically */
+}
+
+.card-title {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+  margin-top: auto;
+}
+
+.card-text {
+  color: #555;
+  margin-bottom: 20px;
+  flex-grow: 1; /*Allow text content to grow to fill remaining space */ 
+  margin-top: auto;
+}
+
+.btn {
+  background-color:darkkhaki;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-top: auto; /* Align buttons to the bottom of the card */
+}
+
+.btn:hover {
+  background-color:darkkhaki;
+}
+.popup{
+  position: absolute;
+  background-color: rgba(243, 243, 243, 0.885);
+  height: 5000px;
+  width: 100%;
+  top: 400px;
+  left: 0;
+}
+.popup-sub{
+  display: flex;
+position: absolute;
+left: 20px;
+top: 30px;
+}
+.popup-sub img{
+  width: 500px;
+  height: 500px;
+}
+.popup-head{
+  margin-left: 30px;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+.popup-head h3{
+  text-align: center;
+  display: flex;
+  position: relative;
+  margin-left: 120px;
+  margin-bottom: 50px;
+  color: darkkhaki;
+  max-width: 500px;
+  
+}
+.popup-head p{
+  margin-top: 30px;
+  max-width: 500px;
+  margin-left: 100px;
+  border: 2px solid darkkhaki;
+  padding: 20px;
+  display: flex;
+  flex-direction:row;
+}
+.popup-head h5{
+    
+    margin-top: 30px;
+    max-width: 100px;
+    margin-left: 280px;
+    border: 2px solid darkkhaki;
+    background-color: rgb(229, 221, 163);
+    display: flex;
+    flex-direction:row;
+    padding: 10px;
+  
+}
+.popup button{
+  height: 30px;
+  width: 90px;
+  position: absolute;
+  right: 10px;
+  top: 40px;
+  background:darkkhaki;
+  color:black;
+  border:2px solid black;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.popup .button1{
+  height: 30px;
+  width: 90px;
+  position: absolute;
+  right: 10px;
+  top: 20px;
+  background:darkkhaki;
+  color:black;
+  border:2px solid black;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.popup .popup-head button {
+  position: relative;
+  width: 130px;
+  background-color: darkkhaki;
+  align-items: center;
+  justify-self: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  margin-left: 80px;
+}
+.popup .popup-head button.active{
+  background-color:red;
+  color: white;
+}
+.icon{
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  right: 120px;
+  top: 20px;
+}
+.cart{
+  width: 50%;
+  background-color:darkkhaki;
+  height: 100%;
+  border: 2px solid black;
+  position: absolute;
+  right: 0;
+  top: 55px;
+  transition: ease-in 025s;
+  max-height: 700px;
+}.cart-sub{
+  margin-left: 20px;
+  margin-top: 20px;
+  align-items: center;
+  
+}
+
+.cart-sub .button:hover{
+  background-color:black;
+  color: white;
+}
+.cart-item {
+  display: flex;
+  align-items: center; /* Align items vertically */
+}
+
+.cart-item img {
+  width: 80px; /* Adjust the width of the image as needed */
+  height: 80px; /* Adjust the height of the image as needed */
+  margin-right: 10px; /* Adjust the spacing between the image and text */
+  margin-top: 20px;
+}
+
+.cart-item h5,
+.cart-item h6,
+.cart-item button {
+  margin-left: 20px; /* Remove default margins */
+}
+.cart-item h6{
+  border: 2px solid black;
+  margin-left: 20px;
+  background-color: white;
+  border-radius: 5px;
+  width: 90px;
+  padding-left: 6px;
+  padding-right: 6px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+  margin-right: 40px;
+  
+}
+
+.cart-item h5{
+  max-width: 200px;
+  border: 1px solid black;
+  background: #e8dbdb89;
+  padding-left: 20px;
+} .button {
+  display: inline-block;
+  background-color: #007bff; /* Change the background color as needed */
+  color: #fff; /* Change the text color as needed */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 70px;
+  margin-top:-5px;
+  
+}
+.buttontwo {
+  display: inline-block;
+  background-color: red; /* Change the background color as needed */
+  color: #fff; /* Change the text color as needed */
+  padding: 10px 20px; /* Adjust padding as needed */
+  border-radius: 5px;
+  text-decoration: none;
+  margin-right: 70px;
+  margin-top: -5px;
+  
+}
+
+.button:hover {
+  background-color: #0056b3; /* Change the hover background color as needed */
+}
+
+.details {
+  /* display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  height: 100vh; /* Optionally, to center vertically */
+  /* background:white;
+  position: absolute;
+  width: 100%;
+  justify-content: center; */ 
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  .details {
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+    position: absolute;
+    background: white;
+    width: 100%;
+    align-items: center;
+    height: 100%;
   }
-  to {
-    transform: rotate(360deg);
+  .details img{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    top: 120px;
+    left: 120px;
   }
-}
+  
+  .details-sub {
+    margin-bottom: 10px; /* Optional spacing between form fields */
+  }
+  .details h2{
+    margin-bottom: 40px;
+    margin-top: 20px;
+    color: red;
+  }
+  .details label {
+    margin-right: 10px; /* Optional spacing between label and input */
+    min-width:100px;
+  }
+  
+  .details input {
+    padding: 5px; /* Optional padding for inputs */
+    margin-right: 30px; /* Optional spacing between inputs */
+    margin-bottom: 30px;
+  }
+  
+  button[type="submit"] {
+    margin-top: 10px; /* Optional spacing between last input and button */
+    background-color: darkkhaki;
+    position:relative;
+    left: 50%;
+    margin-top:1px;
+    color: white;
+  }
+  .confirmation{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    position: absolute;
+  }
+  .confirmation img{
+    position: absolute;
+    left: 40%;
+    width:300px;
+    height: 300px;
+  }
+  .confirmation .seemore{
+    position: absolute;
+    left: 47%;
+    top: 380px;
+  }
+  .hhh a{
+    color: red;
+    font-weight: bold;
+  }
